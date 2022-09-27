@@ -3,7 +3,7 @@ import LoginPage from "../PageObjects/LoginPage";
 import SelectButton from "../PageObjects/SelectButton";
 //import {password, username} from "../fixtures/user";
 
-describe('',()=>{
+describe('Shopping cart Test',()=>{
     const loginPage = new LoginPage()
     const selectButton = new SelectButton()
     const shoppingCart = new ShoppingCartPage()
