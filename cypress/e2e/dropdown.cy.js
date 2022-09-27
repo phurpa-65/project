@@ -1,5 +1,5 @@
 import LoginPage from "../PageObjects/LoginPage";
-import {password, username} from "../fixtures/user";
+//import {password, username} from "../fixtures/user";
 import DropdownMenu from "../PageObjects/DropdownMenu";
 
 describe('Dropdown Test',()=>{
@@ -8,7 +8,7 @@ describe('Dropdown Test',()=>{
 
     before(function(){
         loginPage.visit()
-        loginPage.login(username,password)
+        loginPage.login_()
     })
     it('About and Logout Test',()=>{
         dropdown.clickOnDropdownMenu()

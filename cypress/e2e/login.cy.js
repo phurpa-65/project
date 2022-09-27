@@ -1,5 +1,5 @@
 import LoginPage from "../PageObjects/LoginPage";
-import {username,password} from "../fixtures/user";
+//import {username,password} from "../fixtures/user";
 
 describe('Login Failed Test',()=>{
     const loginPage = new LoginPage()
@@ -19,7 +19,7 @@ describe('passed login test',()=>{
     const loginPage = new LoginPage()
     it('should login',()=>{
         loginPage.clearFields()
-        loginPage.login(username,password)
+        loginPage.login_()
         loginPage.productPageIsVisible()
     })
 })

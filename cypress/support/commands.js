@@ -24,42 +24,41 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
-Cypress.Commands.add('login',(username,password)=>{
-    cy.get('#user-name').type(username)
-    cy.get('#password').type(password)
-    cy.get('#login-button').click()
-})
+// Cypress.Commands.add('login',(username,password)=>{
+//     cy.get('#user-name').type(username)
+//     cy.get('#password').type(password)
+//     cy.get('#login-button').click()
+// })
 
 Cypress.Commands.add('sel',(selector)=>{
     return cy.get(`[data-test*=${selector}]`);
 })
 
 
-// Cypress.Commands.add('login', (userType, email, password) => {
-//     const types = {
-//         first: {
-//             login: email,
-//             password: password,
-//         },
-//         second: {
-//             login: email,
-//             password: password
-//         },
-//         third: {
-//             login: email,
-//             password: password
-//         },
-//         fourth: {
-//             login: email,
-//             password: password
-//         }
-//     };
-//
-//     const user = types[userType];
-//
-//     cy.visit('https://www.saucedemo.com/');
-//     cy.get('#user-name').type(user.login)
-//     cy.get('#password').type(user.password)
-//     cy.get('#login-button').click()
-//     cy.url().should('include','inventory.html')
-// });
+Cypress.Commands.add('login', (userType, email, password) => {
+    const types = {
+        first: {
+            login:'standard_user',
+            password: 'secret_sauce',
+        },
+        second: {
+            login: email,
+            password: password
+        },
+        third: {
+            login: email,
+            password: password
+        },
+        fourth: {
+            login: email,
+            password: password
+        }
+    };
+
+    const user = types[userType];
+
+    cy.visit('https://www.saucedemo.com/');
+    cy.get('#user-name').type(user.login)
+    cy.get('#password').type(user.password)
+    cy.get('#login-button').click()
+});

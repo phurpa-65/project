@@ -8,8 +8,11 @@ class LoginPage extends BasePage{
     loginPageIsVisible(){
         cy.get('#login_button_container').should('be.visible')
     }
-    login(username,password){
-        cy.login(username,password);
+    login(){
+        cy.login('second','locked_out_user','secret_sauce');
+    }
+    login_(){
+        cy.login('first');
     }
     clearFields(){
         cy.get('#user-name').clear()
@@ -17,7 +20,7 @@ class LoginPage extends BasePage{
     }
     errorMessageIsVisible(){
         cy.get('h3')
-            .contains('Epic sadface: Username and password do not match any user in this service')
+            .contains('Epic sadface: Sorry, this user has been locked out.')
             .should('be.visible')
     }
     productPageIsVisible(){

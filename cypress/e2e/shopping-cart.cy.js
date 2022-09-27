@@ -1,7 +1,7 @@
 import ShoppingCartPage from "../PageObjects/ShoppingCartPage";
 import LoginPage from "../PageObjects/LoginPage";
 import SelectButton from "../PageObjects/SelectButton";
-import {password, username} from "../fixtures/user";
+//import {password, username} from "../fixtures/user";
 
 describe('',()=>{
     const loginPage = new LoginPage()
@@ -10,7 +10,7 @@ describe('',()=>{
 
     beforeEach(function(){
         loginPage.visit()
-        loginPage.login(username,password)
+        loginPage.login_()
     })
     it('select low to high',()=>{
         selectButton.selectLowToHigh()

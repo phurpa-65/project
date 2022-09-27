@@ -1,5 +1,5 @@
 import LoginPage from "../PageObjects/LoginPage";
-import {password, username} from "../fixtures/user";
+//import {password, username} from "../fixtures/user";
 import SelectButton from "../PageObjects/SelectButton";
 import ShoppingCartPage from "../PageObjects/ShoppingCartPage";
 import CheckoutPage from "../PageObjects/CheckoutPage";
@@ -12,7 +12,7 @@ describe('Checkout Test',()=>{
 
     before(function(){
         loginPage.visit()
-        loginPage.login(username,password)
+        loginPage.login_()
     })
     it('Checkout',()=>{
         selectButton.selectHighToLow()

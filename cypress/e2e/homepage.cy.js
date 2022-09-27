@@ -1,7 +1,7 @@
 import HomePage from "../PageObjects/HomePage";
 import LoginPage from "../PageObjects/LoginPage";
 import SelectButton from "../PageObjects/SelectButton";
-import {password, username} from "../fixtures/user";
+//import {password, username} from "../fixtures/user";
 
 describe('Homepage Test',()=>{
     const homePage = new HomePage()
@@ -12,7 +12,7 @@ describe('Homepage Test',()=>{
         loginPage.visit()
     })
     it('should log in,check if inventory list is visible,click on item',()=>{
-        loginPage.login(username,password)
+        loginPage.login_()
         homePage.inventoryListIsVisible()
         homePage.clickOnInventoryItem()
         homePage.displayItemDetail()
